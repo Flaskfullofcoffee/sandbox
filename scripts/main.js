@@ -108,8 +108,8 @@ function generateObj() {
   }
 }
 var {name, state} = generateObj();
-console.log(name);
-console.log(state);
+// console.log(name);
+// console.log(state);
 
 var people = [
   {
@@ -128,7 +128,7 @@ var people = [
   },
 ]
 
-people.forEach(({firstName}) => console.log(firstName))
+// people.forEach(({firstName}) => console.log(firstName))
 
 var [,Skyler] = people; // skip the first object, name the second object 'Skyler'
 
@@ -136,13 +136,105 @@ function logEmail({email}){ // grab the email key/value of the people object
   console.log(email);
 }
 
-logEmail(Skyler) // print out the email value of the second object that we named 'Skyler'
+// logEmail(Skyler) // print out the email value of the second object that we named 'Skyler'
 
 
 // ES6 MODULES /////////////////////////////////////////////////////////////////
 
-import sumTwo() from 'math/addition';
+// import {sumTwo} from 'scripts/math/addition.js';
+//
+// console.log(
+//   '2 + 3',
+// sumTwo(2, 3));
 
-console.log(
-  '2 + 3',
-sumTwo(2, 3));
+
+// PROMISES WITH ES6 ///////////////////////////////////////////////////////////
+
+// var d = new Promise((resolve, reject) =>{
+//   setTimeout(() =>{
+//     if (false) {
+//       resolve('Hello, world!');
+//     } else {
+//       reject('no bueno')
+//     }
+//   }, 2000);
+// });
+
+
+
+// d.then((data) => console.log('success: ', data)). // resolve will fire
+  // catch((err) => console.log('error: ', err)); // reject will fire
+
+
+// GENERATORS //////////////////////////////////////////////////////////////////
+
+function* greet() {
+  // console.log(`You called 'next()'`);
+  yield 'Hello';
+}
+let greeter = greet();
+// console.log(greeter);
+let next = greeter.next();
+// console.log(next);
+
+
+// MAPS ////////////////////////////////////////////////////////////////////////
+
+var myMap = new Map();
+
+//API
+/*
+set()
+get()
+size
+clear()
+has
+*/
+
+// myMap.set('foo', 'bar');
+// myMap.set('hello', 'world');
+// console.log(myMap.get('foo'));
+// console.log(myMap.clear());
+// console.log(myMap.size);
+// console.log(myMap.has('foo'));
+// console.log(myMap.has('baz'));
+
+//Iterators
+//keys()
+//entries()
+//values
+
+for (let key of myMap.keys()) {
+  // console.log(key);
+}
+for (let value of myMap.values()) {
+  // console.log(value);
+}
+for (let [key, value] of myMap.entries()) {
+  // console.log(`${key} = ${value}`);
+}
+
+
+// ES6 REST PARAMETERS /////////////////////////////////////////////////////////
+
+// rest parameters vs. arguments keyword
+// function myFunc() {
+//   arguments.forEach((v, i, a) => {
+//     console.log(v);
+//   })
+// }
+// myFunc(1, 2, 3);
+
+//new constructor of ES5
+
+function Store() {
+  var aisle = {
+    fruit: [],
+    vegetables: []
+  }
+  return {
+    add: function(category) {
+
+    }
+  }
+}
