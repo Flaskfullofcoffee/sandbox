@@ -141,7 +141,7 @@ logEmail(Skyler) // print out the email value of the second object that we named
 
 // ES6 MODULES /////////////////////////////////////////////////////////////////
 
-import { sumTwo } from `math/addition`;
+import sumTwo() from 'math/addition';
 
 console.log(
   '2 + 3',

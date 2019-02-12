@@ -1,4 +1,7 @@
-let sumTwo = (a, b) => {
+export function sumTwo(a, b) {
   return a + b;
 }
-export { sumTwo };
+
+export function sumThree(a, b, c) {
+  return a + b + c;
+}
